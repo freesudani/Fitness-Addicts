@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { menuData } from '../data/MenuData';
+import { Button } from './Button';
+import { FaBars } from 'react-icons/fa'
 
 const Nav = styled.nav`
  height: 60px;
@@ -11,7 +13,7 @@ const Nav = styled.nav`
  z-index: 100;
  position: fixed;
  width: 100%;
- background: #000;
+ background: red;
 `;
 
 const NavLink = css`
@@ -29,31 +31,65 @@ const Logo = styled(Link)`
  font-style: italic;
 `;
 
-const MenuBars = styled.i``;
+const MenuBars = styled(FaBars)`
+ display: none;
+ 
+
+ @media screen and (max-width: 768px) {
+  display: block;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 25%);
+
+}
+`;
 
 
 const NavMenu = styled.div`
  display: flex;
  align-items: center;
+ margin-right: -40px;
+
+ @media screen and (max-width: 768px) {
+   display: none;
+ }
 `;
 
 const NavMenuLinks = styled(Link)`
  ${NavLink}
 `;
 
+const NavBtn = styled.div`
+ display: flex;
+ align-items: center;
+ margin-right: 24px;
+
+ @media screen and (max-width: 768px) {
+  display: none;
+}
+`;
+
 
 function NavBar() {
     return (
         <Nav>
-            <Logo tp='/'>ELIXR</Logo>
+            <Logo to='/'>ELIXR</Logo>
             <MenuBars />
             <NavMenu>
               {menuData.map((item, index) => (
                   <NavMenuLinks to={item.link} key={index}>
                     {item.title}
                   </NavMenuLinks>
-              ))}
-            </NavMenu>  
+              ))};
+            </NavMenu>
+            <NavBtn>
+              <Button to="/contact" primary='true'>Contact Us</Button>
+            </NavBtn>  
         </Nav>
     );
 };
