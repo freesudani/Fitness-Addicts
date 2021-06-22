@@ -7,7 +7,7 @@ import ImageFive from '../images/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg';
 
 export const SliderData = [
     {
-    title: 'luxury Villa in Bali, Indonesia',
+    title: 'Indoor fitness classes',
     price: '$4,280,000',
     path:  '/homes',
     label: 'View Home',
@@ -15,7 +15,7 @@ export const SliderData = [
     alt: 'House'
     },
     {
-    title: 'luxury Villa in Bali, Indonesia',
+    title: 'wide range of standard Swimming and Spa Pools',
     price: '$4,280,000',
     path:  '/homes',
     label: 'View Home',
@@ -23,7 +23,7 @@ export const SliderData = [
     alt: 'House'
     },
     {
-    title: 'luxury Villa in Bali, Indonesia',
+    title: 'Outdoor Cardio Options',
     price: '$4,280,000',
     path:  '/homes',
     label: 'View Home',
@@ -31,7 +31,7 @@ export const SliderData = [
     alt: 'House'
     },
     {
-    title: 'luxury Villa in Bali, Indonesia',
+    title: 'Fields of play in various sports',
     price: '$4,280,000',
     path:  '/homes',
     label: 'View Home',
@@ -39,7 +39,7 @@ export const SliderData = [
     alt: 'House'
     },
     {
-    title: 'luxury Villa in Bali, Indonesia',
+    title: 'Best Olympic Weightlifting and Powerlifting Gyms',
     price: '$4,280,000',
     path:  '/homes',
     label: 'View Home',

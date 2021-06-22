@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState, useRef } from 'react';
 import { FaSlideshare } from 'react-icons/fa';
 import { Button } from './Button';
 import styled, { css } from 'styled-components';
 import { IoMdArrowRoundForward } from 'react-icons/io';
-import { IoMdArrowForward, IoArrowBack, IoArrowForward } from 'react-icons/io5';
+import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 
 const HeroSection = styled.section`
  height: 100vh;
@@ -83,7 +83,9 @@ const HeroContent = styled.div`
      text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
  }
 `;
-const Arrow = styled(IoMdArrowRoundForward)``;
+const Arrow = styled(IoMdArrowRoundForward)`
+ margin-left: 0.5rem;
+`;
 
 const SliderButtons= styled.div`
   position: absolute;
@@ -121,12 +123,51 @@ const NextArrow = styled(IoArrowForward)`
 
 
 function Hero({ slides }) {
+const [current, setCurrent] = useState(0);
+const length = slides.length;
+const timeout = useRef(null);
+
+useEffect(() => {
+   const nextSlide = () => {
+       setCurrent(current => (current === length -1 ? 0 : current + 1))
+   } 
+
+   timeout.current = setTimeout(nextSlide, 4000)
+
+   return function () {
+       if(timeout.current) {
+           clearTimeout(timeout.current);
+       }
+   }
+}, [current, length])
+
+const nextSlide = () => {
+    if(timeout.current) {
+        clearTimeout(timeout.current);
+    }
+
+    setCurrent(current === length -1 ? 0 : current + 1);
+};
+
+const prevSlide = () => {
+    if(timeout.current) {
+        clearTimeout(timeout.current);
+    }
+
+    setCurrent(current === 0 ? length -1 : current - 1);
+};
+
+if(!Array.isArray(slides) || slides.length <= 0) {
+    return null
+};
+
     return (
         <HeroSection>
             <HeroWrapper>
                 {slides.map((slide, index) => {
                     return (
                         <HeroSlide key={index}>
+                            {index === current && (
                             <HeroSlider>
                                 <HeroImage src={slide.image} alt={slide.alt}/>
                                 <HeroContent>
@@ -140,12 +181,13 @@ function Hero({ slides }) {
                                     </Button>
                                 </HeroContent>
                             </HeroSlider>
+                            )}
                         </HeroSlide>
                     )
                 })}
                 <SliderButtons>
-                    <PrevArrow />
-                    <NextArrow />
+                    <PrevArrow  onClick={prevSlide}/>
+                    <NextArrow onClick={nextSlide} />
                 </SliderButtons>
             </HeroWrapper>
         </HeroSection>

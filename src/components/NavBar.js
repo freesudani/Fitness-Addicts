@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
 import { FaBars } from 'react-icons/fa'
+import logo from '../images/60d47e99bf5749c4999ed305f02502c5.png';
 
 const Nav = styled.nav`
  height: 60px;
@@ -28,6 +29,13 @@ const NavLink = css`
 const Logo = styled(Link)`
  ${NavLink}
  font-style: italic;
+
+ img {
+   width: 8rem;
+   height: 8rem;
+   position: absolute;
+   transform: translateY(-1rem);
+ }
 `;
 
 const MenuBars = styled(FaBars)`
@@ -54,6 +62,7 @@ const NavMenu = styled.div`
  display: flex;
  align-items: center;
  margin-right: -40px;
+ margin-top: 50px;
 
  @media screen and (max-width: 768px) {
    display: none;
@@ -68,6 +77,7 @@ const NavBtn = styled.div`
  display: flex;
  align-items: center;
  margin-right: 24px;
+ margin-top: 50px;
 
  @media screen and (max-width: 768px) {
   display: none;
@@ -78,7 +88,7 @@ const NavBtn = styled.div`
 function NavBar() {
     return (
         <Nav>
-            <Logo to='/'>ELIXR</Logo>
+            <Logo to='/'><img src={logo} alt='logo' /></Logo>
             <MenuBars />
             <NavMenu>
               {menuData.map((item, index) => (
@@ -89,7 +99,7 @@ function NavBar() {
             </NavMenu>
             <NavBtn>
               <Button to="/contact" primary='true'>Contact Us</Button>
-            </NavBtn>  
+            </NavBtn>
         </Nav>
     );
 };
