@@ -13,7 +13,6 @@ const Nav = styled.nav`
  z-index: 100;
  position: fixed;
  width: 100%;
- background: red;
 `;
 
 const NavLink = css`
@@ -37,6 +36,7 @@ const MenuBars = styled(FaBars)`
 
  @media screen and (max-width: 768px) {
   display: block;
+  color: white;
   cursor: pointer;
   height: 40px;
   width: 40px;
