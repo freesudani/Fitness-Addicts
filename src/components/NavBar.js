@@ -85,11 +85,11 @@ const NavBtn = styled.div`
 `;
 
 
-function NavBar() {
+function NavBar({ toggle }) {
     return (
         <Nav>
             <Logo to='/'><img src={logo} alt='logo' /></Logo>
-            <MenuBars />
+            <MenuBars onClick={toggle}/>
             <NavMenu>
               {menuData.map((item, index) => (
                   <NavMenuLinks to={item.link} key={index}>

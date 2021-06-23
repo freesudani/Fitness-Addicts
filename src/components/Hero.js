@@ -40,7 +40,7 @@ const HeroSlider = styled.div`
  justify-content: center;
 
  &::before {
-     content: '',
+     content: '';
      position: absolute;
      z-index: 2;
      width: 100%;
@@ -49,9 +49,10 @@ const HeroSlider = styled.div`
      left: 0;
      overflow: hidden;
      opacity: 0.4;
-     background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)
+     background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%);
  }
 `;
+
 const HeroImage = styled.img`
  position: absolute;
  top: 0;
