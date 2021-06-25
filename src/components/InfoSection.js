@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 
+
+
 const Section = styled.section`
  width: 100%;
  height: 100%;
@@ -26,8 +28,7 @@ const ColumnLeft = styled.div`
  justify-content:  center;
  line-height: 1.4;
  padding: 1rem 2rem;
- order: ${({reverse }) => (reverse ? '2' : '1')};
-
+ 
   h1 {
     margin-bottom: 1rem;
     font-size: clamp(1.5rem, 6vw, 2rem);
@@ -40,14 +41,10 @@ const ColumnLeft = styled.div`
 
 const ColumnRight = styled.div`
  padding: 1rem 2rem;
- order: ${({reverse }) => (reverse ? '1' : '2')};
  display: flex;
  align-items: center;
  justify-content:  center;
 
- @media screen and (max-width: 768px) {
-    order: ${({reverse }) => (reverse ? '2' : '1')};
-}
 
  img {
     width: 100%;
@@ -64,7 +61,10 @@ const ColumnRight = styled.div`
 
 
 
-const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse, image}) => {
+
+
+const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, image}) => {
+
     return (
         <Section>
             <Container>
@@ -74,7 +74,7 @@ const InfoSection = ({heading, paragraphOne, paragraphTwo, buttonLabel, reverse,
                  <p>{paragraphTwo}</p>
                  <Button to="/homes" primary="true">{buttonLabel}</Button>
                 </ColumnLeft>
-                <ColumnRight reverse={reverse}>
+                <ColumnRight >
                  <img src={image} alt="home" />
                 </ColumnRight>
             </Container>

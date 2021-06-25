@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { AiFillInstagram, AiFillTwitterSquare, AiFillYoutube, AiFillFacebook } from "react-icons/ai";
 
 const FooterContainer = styled.div`
  padding: 80px 60px;
- background: radial-gradient(circle, rgba(92,39,251,1) 0%, rgba(112,71,247,1) 100%)
+ background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%);
 `;
 
 const FooterWrapper = styled.div`
@@ -32,7 +32,9 @@ const FooterLink = styled.div`
  color: #fff;
  margin-bottom: 28px;
  font-size: 18px;
+ cursor: pointer;
  text-decoration: none;
+ margin-left: 5px;
 
  &:hover {
     color: #000d1a;
@@ -46,6 +48,11 @@ const FooterTitle = styled.div`
  margin-bottom: 40px;
  font-weight: bold;
 `;
+
+const SocialDiv = styled.div`
+ display: flex;
+`;
+
 
 
 const FooterSection = () => {
@@ -75,10 +82,18 @@ const FooterSection = () => {
                     </Column>
                     <Column>
                     <FooterTitle>Social Media</FooterTitle>
-                    <FooterLink href='#'>Facebook</FooterLink>
-                    <FooterLink href='#'>Youtube</FooterLink>
-                    <FooterLink href='#'>Twitter</FooterLink>
-                    <FooterLink href='#'>Instagram</FooterLink>
+                    <SocialDiv>
+                    <AiFillFacebook/><FooterLink href='#'>Facebook</FooterLink>
+                    </SocialDiv>
+                    <SocialDiv>
+                    <AiFillYoutube/><FooterLink href='#'>Youtube</FooterLink>
+                    </SocialDiv>
+                    <SocialDiv>
+                    <AiFillTwitterSquare/><FooterLink href='#'>Twitter</FooterLink>
+                    </SocialDiv>
+                    <SocialDiv>
+                    <AiFillInstagram/><FooterLink href='#'>Instagram</FooterLink>
+                    </SocialDiv>
                     </Column>
                 </Row>
             </FooterWrapper>

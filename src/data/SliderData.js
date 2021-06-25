@@ -8,7 +8,7 @@ import ImageFive from '../images/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg';
 export const SliderData = [
     {
     title: 'Indoor fitness classes',
-    price: '$4,280,000',
+    categories: 'Zumba Fitness / KickBoxing / Pilates / Step Aerobics / Yoga',
     path:  '/homes',
     label: 'View Home',
     image: ImageOne,
@@ -16,7 +16,7 @@ export const SliderData = [
     },
     {
     title: 'wide range of standard Swimming and Spa Pools',
-    price: '$4,280,000',
+    categories: 'Scuba Diving / Diving / swimming',
     path:  '/homes',
     label: 'View Home',
     image: ImageTwo,
@@ -24,7 +24,7 @@ export const SliderData = [
     },
     {
     title: 'Outdoor Cardio Options',
-    price: '$4,280,000',
+    categories: 'Cycling / Sprinting / Marathon / Climbing',
     path:  '/homes',
     label: 'View Home',
     image: ImageThree,
@@ -32,7 +32,7 @@ export const SliderData = [
     },
     {
     title: 'Fields of play in various sports',
-    price: '$4,280,000',
+    categories: 'Volleyball / Tennis / Football / Baseball',
     path:  '/homes',
     label: 'View Home',
     image: ImageFour,
@@ -40,7 +40,7 @@ export const SliderData = [
     },
     {
     title: 'Best Olympic Weightlifting and Powerlifting Gyms',
-    price: '$4,280,000',
+    categories: 'Weightlifting / Strongman / Bodybuilding / Powerlifting',
     path:  '/homes',
     label: 'View Home',
     image: ImageFive,

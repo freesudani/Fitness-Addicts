@@ -10,7 +10,7 @@ const HeroSection = styled.section`
  max-height: 1100px;
  position: relative;
  overflow: hidden:
-
+ 
 `;
 
 
@@ -29,6 +29,7 @@ const HeroSlide = styled.div`
  width: 100%;
  height:100%;
 `;
+
 const HeroSlider = styled.div`
  position: absolute;
  top: 0;
@@ -173,7 +174,7 @@ if(!Array.isArray(slides) || slides.length <= 0) {
                                 <HeroImage src={slide.image} alt={slide.alt}/>
                                 <HeroContent>
                                     <h1>{slide.title}</h1>
-                                    <p>{slide.price}</p>
+                                    <p>{slide.categories}</p>
                                     <Button to={slide.path} primary='true'
                                     css={`max-width: 160px;`}
                                     >
